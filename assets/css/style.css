@@ -162,4 +162,18 @@ footer {
         display: none;
     }
 
+    /* This CSS makes use of our extra screen space on a larger screen to make the logo larger and stand out more so it has a bigger impact */
+    #logo {
+        font-size: 200%;
+        line-height: 75px;
+        margin: 0 0.5rem;
+    }
+
+    /* Main content */
+    main {
+        /* Push main content down to accommodate larger header */
+        margin-top: 79px;
+    }
+
+
 }
