@@ -178,6 +178,9 @@ footer {
 
 }
 
+/* This CSS creates an indication that a link is clickable (by adding a line underneath). 
+Note that this only works on laptops and desktops which have a mouse - does not work with touchscreens, 
+therefore we have only applied this pseudo hover class to the largest of screens */
 /* large devices (laptops and desktops, 992px and up) */
 @media screen and (min-width: 992px) {
     #menu a:hover {
