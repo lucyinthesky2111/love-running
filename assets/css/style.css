@@ -1,8 +1,10 @@
 /* Google Fonts import */
 @import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Oswald:wght@200..700&display=swap');
 
-
-/* Asterix wildcard selector/universal selector to override default styles added by the browser */
+/* Because of CSS specificity, the order of our style rules matters. Must start with the most general rules at the top of the stylesheet and the rules must get more specific all the way down. I.e. most general styles at top, most specific styles at bottom */
+/* asterisk wildcard selector/ universal selector goes at top of stylesheet so we can override it when required */
+/* Asterisk wildcard selector/universal selector to override default styles added by the browser */
+/* We are using asterisk selector in this instance to set padding and margin to 0 which overrides browser defaults. We are setting the box-sizing property on all our elements to border-box so that later when we set the height or width to an element, it will be applied to the entire element incl. the border */
 * {
     padding: 0;
     margin: 0;
@@ -10,6 +12,8 @@
 }
 
 /* General styles */
+/* min-height property with value of 100vh allows the body to stretch larger than the height of the screen when there is enough content on the page that the user needs to scroll */
+/* we set the display to flex to activate flexbox and the flex direction to column so that our elements will still show underneath each other */
 body {
    min-height: 100vh; 
    display: flex;
@@ -22,24 +26,44 @@ body {
 /* Header */
 header {
     background-color: #ffffff;
+    /* padding left and right has been added here to prevent our text from sticking to the side of the screen */
     padding: 0 1rem;
+    /* as we want the nav bar to scroll along, we have set it's position to fixed */
     position: fixed;
+    /* we use a high z-index (in this case 99) to make sure it is layered on top of any other elements that might have a z-index later */
     z-index: 99;
+    /* we had to give the header a width of 100% here because without it, it will revert to content width because we made its position fixed. 
+    Giving the header a width of 100% makes sure it will fill the width of the screen again */
     width: 100%;
+    /* box-shadow property indicates that this element (the header) is layered on top of the other content. 
+    This property creates a shadow over the elements below it, which adds depth and is more visually appealing for the user. 
+    This property has 4 values (first 2 are mandatory):
+    1 = horizontal offset - negative values offset this to the left of the element, 
+    positive values offset to the right. Don't need this here as our header is full width so set to 0.
+    2 = vertical offset - positive values displays the shadow below the element, negatives values 
+    displays shadows above it. We only want a small shadow here so have set 2px.
+    3 = sets the blur i.e. how soft or hard the shadow will look. 
+    4 = colour value specified here is dark grey. If we didn't set any value, 
+    the default colour the browser would apply is black */
     box-shadow: 0 2px 2px #3a3a3a;
+    /* adding display flec to the header makes the nav bar items show in a row (default flex position if none is specified is row) */
     display: flex;
     justify-content: space-between;
+    /* this property makes all the nav bar items be displayed in a line vertically */ 
     align-items: baseline;
 }
 
+/* this style rules targets any tag which is a descendent of the header. The property of text decoration none removes the underline under links */
 header  a {
     text-decoration: none;
+    /* this property means that any tags which are a descendent of the header will inherit their text colour from the body */
     color: inherit;
 }
 
 h1 {
     font-family: 'Oswald', sans-serif;
     text-transform: uppercase;
+    /* letter spacing provides breathing space between the letters */
     letter-spacing: 2px;
     color: #252525;
 }
@@ -50,31 +74,44 @@ h1 {
     list-style-type: none;
 }
 
+ /* this selector targets the list items inside the menu */ 
 #menu > li {
+    /* margin bottom 1em means that the list items inside the menu are more spaced out vertically */
     margin-bottom: 1em;
 }
 
+/* we created the active class to show users where they are in the website by giving the links 
+in the menu a visual cue when the user is on that particular page. */
 .active {
     border-bottom: 1px solid #3a3a3a;
 }
 
 /* Nav bar styles with dropdown toggle */
 nav {
+    /* position absolute takes an element outside the normal flow of the page structure.
+     It is positioned relative to the nearest positioned ancestor, which in this case is the header. */
     position: absolute;
+    /* had to put the background color in here to make the header look like a single object when it is opened */
     background-color: #ffffff;
     width: 100%;
+    /* the left property with value 0 aligns the nav bar directly against the left of the screen */ 
     left: 0;
     padding: 0 1rem;
     box-shadow: 0 2px 2px #3a3a3a;
+    /* setting the display to none means the nav bar items are hidden until the user clicks to open them */ 
     display: none;
+    /* top property means that the top of the nav bar should start at the bottom of its parent. 
+    0% would represent the top of the parent, 100% represents the bottom of it */
     top: 100%;
 }
 
 /* Nav toggle */
+/* this pseudo class is saying that when the nav bar toggle is checked, the sibling nav element should be displayed */
 #nav-toggle:checked~nav {
     display: block;
 }
 
+/* hides the checkbox */
 #nav-toggle {
     display: none;
 }
@@ -88,7 +125,8 @@ main {
     background-color: lightblue;
     /* Make main element take up any surplus space to push footer down */
     flex: 1 0 auto;
-    /* because we set header position to fixed earlier, this took the header out of the normal flow of elements on the main page and covered the top of the main elements. To fix this, we add a margin-top of 47px to our main element to push the content down so we can see it underneath our nav bar once again */
+    /* because we set header position to fixed earlier, this took the header out of the normal flow of elements on the main page and covered the top of the main elements. 
+    To fix this, we add a margin-top of 47px to our main element to push the content down so we can see it underneath our nav bar once again */
     margin-top: 47px;
 }
 
