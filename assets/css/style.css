@@ -88,6 +88,8 @@ main {
     background-color: lightblue;
     /* Make main element take up any surplus space to push footer down */
     flex: 1 0 auto;
+    /* because we set header position to fixed earlier, this took the header out of the normal flow of elements on the main page and covered the top of the main elements. To fix this, we add a margin-top of 47px to our main element to push the content down so we can see it underneath our nav bar once again */
+    margin-top: 47px;
 }
 
 /* Footer */
