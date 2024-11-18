@@ -134,3 +134,32 @@ main {
 footer {
     background-color: orange;
 }
+
+/* Media query: tablets and larger (768px and up). These properties between the curly brackets after @media screen and..... are only applied if the screen size of the device is 768px or larger */
+@media screen and (min-width: 768px) {
+    /* Header */
+    nav {
+        display: block;
+        position: relative;
+        /* hides the box shadow as we don't need it on a larger screen */
+        box-shadow: none;
+        width: fit-content;
+        padding-right: 1rem;
+    }
+
+    #menu {
+        /* display flex here means that the menu items (denoted with the id menu inside the ul element in the html code) will be displayed in a row */
+        display: flex;
+    }
+
+    /* gives the list items breathing space by adding padding to the left of each list item in the menu so they do not stick together */
+    #menu > li {
+        padding-left: 1rem;
+    }
+
+    /* Hides the toggle for the drop down menu - we do not need this on a larger screen as all the menu items are displayed in a row */
+    .nav-toggle-label {
+        display: none;
+    }
+
+}
