@@ -131,8 +131,23 @@ main {
 }
 
 /* Footer */
-footer {
-    background-color: orange;
+#social-networks {
+    /* to centre our icons, we use text-align as icons are treated as text for CSS purposes */
+    text-align: center;
+    /* the padding here has added vertically breathing space above and below our icons */
+    padding: 20px 0;
+    /* we've used flexbox here to space our icons evenly along the footer */
+    display: flex;
+    justify-content: space-evenly;
+    /* as the we inputted the icons as list icons, they display by default with bullet points, this css removes them */
+    list-style-type: none;
+}
+
+/* font awesome added all the icons as i elements so our css below targets all i elements that are descendants of the social networks ul */
+#social-networks i {
+    font-size: 160%;
+    padding: 5%;
+    color: #3a3a3a
 }
 
 /* Note that CSS styles for different screen sizes are applied with the styles for smallest screens at the top and styles for biggest screens at the bottom */
