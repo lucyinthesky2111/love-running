@@ -26,7 +26,9 @@
         </a>
         <!-- this checkbox means we can toggle the nav bar items between open and hidden -->
         <input type="checkbox" id="nav-toggle" name="nav-toggle">
-        <label for="nav-toggle" class="nav-toggle-label">X</label>
+        <label for="nav-toggle" class="nav-toggle-label">
+           <i class="fa-solid fa-bars"></i></a>
+        </label>
         <nav>
             <ul id="menu">
                 <li><a href="" class="active">Home</a></li>
@@ -44,9 +46,25 @@
     <footer>
         <ul>
             <!--rel no opener protects the site from possible attack-->
-            <!-- aria label used so screen readers can read our facebook icon-->
-            <li><a href="https://www.facebook.com" target="_blank" rel="noopener"
-                    aria-label="Visit our Facebook page (opens in a new tab)"><i class="fa-brands fa-facebook"></i></a>
+            <!-- aria label used so screen readers will read
+             the message 'visit our ... page (opens in a new tab) to users
+             who can not see our facebook icon and therefore cannot see
+              that it contains a link-->
+            <li><a href="https://www.facebook.com" target="_blank" rel="noopener" 
+                aria-label="Visit our Facebook page (opens in a new tab)">
+                <i class="fa-brands fa-facebook"></i></a>
+            </li>
+            <li><a href="https://www.x.com" target="_blank" rel="noopener" 
+                aria-label="Visit our X page (opens in a new tab)">
+                <i class="fa-brands fa-twitter"></i></a>
+            </li>
+            <li><a href="https://www.youtube.com" target="_blank" rel="noopener" 
+                aria-label="Visit our YouTube page (opens in a new tab)">
+                <i class="fa-brands fa-square-youtube"></i></a>
+            </li>
+            <li><a href="https://www.instagram.com" target="_blank" rel="noopener" 
+                aria-label="Visit our Instagram page (opens in a new tab)">
+                <i class="fa-brands fa-instagram"></i></a>
             </li>
         </ul>
     </footer>
