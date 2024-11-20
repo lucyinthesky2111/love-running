@@ -122,12 +122,24 @@ nav {
 
 /* Main Content */
 main {
-    background-color: lightblue;
     /* Make main element take up any surplus space to push footer down */
     flex: 1 0 auto;
     /* because we set header position to fixed earlier, this took the header out of the normal flow of elements on the main page and covered the top of the main elements. 
     To fix this, we add a margin-top of 47px to our main element to push the content down so we can see it underneath our nav bar once again */
     margin-top: 47px;
+}
+
+/* Hero section */
+#hero {
+    /* this height property means the image has space to show up */
+    height: 600px;
+    /* the width of 100% means the image will span the entire width of the screen */
+    width: 100%;
+    /* this file path is a relative file path so it will show correctly on our deployed site (absolute file paths don't always display correctly on github pages) to go up a level to another folder, we use ../ in the relative file path.
+    no repeat means the image does not repeat, typing center twice means the image will be centered both horizontally and vertically. The cover property means the image will automatically size itself so it covers the entire hero section without
+    distorting.*/
+
+    background: url("../images/hero-image.webp") no-repeat center center/cover;
 }
 
 /* Footer */
