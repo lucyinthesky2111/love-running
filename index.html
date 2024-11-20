@@ -5,8 +5,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- Meta tags for search engines -->
-     <meta name="description" content="Love Running. Club for runners in Dublin, Ireland. Urban running. Trail running. Dublin Doclands and Phoenix Park.">
-     <meta name="keywords" content="love running, run, running club, runners, Ireland, Dublin, sport, exercise">
+    <meta name="description"
+        content="Love Running. Club for runners in Dublin, Ireland. Urban running. Trail running. Dublin Doclands and Phoenix Park.">
+    <meta name="keywords" content="love running, run, running club, runners, Ireland, Dublin, sport, exercise">
     <!-- Title -->
     <title>Love Running</title>
     <!-- Favicon -->
@@ -19,28 +20,45 @@
 
 <body>
     <!-- Header -->
-     <header>
+    <header>
         <a href="index.html">
             <h1 id="logo">Love Running</h1>
-            </a>
-            <!-- this checkbox means we can toggle the nav bar items between open and hidden -->
-            <input type="checkbox" id="nav-toggle" name="nav-toggle">
-            <label for="nav-toggle" class="nav-toggle-label">X</label>
-            <nav>
-                <ul id="menu">
-                    <li><a href="" class="active">Home</a></li>
-                    <li><a href="">Gallery</a></li>
-                    <li><a href="">Sign Up</a></li>
-                </ul>
-            </nav>
-      
-     </header>
+        </a>
+        <!-- this checkbox means we can toggle the nav bar items between open and hidden -->
+        <input type="checkbox" id="nav-toggle" name="nav-toggle">
+        <label for="nav-toggle" class="nav-toggle-label">X</label>
+        <nav>
+            <ul id="menu">
+                <li><a href="" class="active">Home</a></li>
+                <li><a href="">Gallery</a></li>
+                <li><a href="">Sign Up</a></li>
+            </ul>
+        </nav>
 
-     <!-- Main Content -->
-      <main>Main Content</main>
+    </header>
 
-      <!-- Footer -->
-       <footer>Footer</footer>
+    <!-- Main Content -->
+    <main>Main Content</main>
+
+    <!-- Footer -->
+    <footer>
+        <ul>
+            <!--rel no opener protects the site from possible attack-->
+            <!-- aria label used so screen readers can read our facebook icon-->
+            <li><a href="https://www.facebook.com" target="_blank" rel="noopener"
+                    aria-label="Visit our Facebook page (opens in a new tab)"><i class="fa-brands fa-facebook"></i></a>
+            </li>
+        </ul>
+    </footer>
+
+    <!--Font Awesome kit code - can use this kit code to add as many 
+    icons as wanted to as many projects as wanted-->
+    <!--Can add JavaScript code to our head with our CSS stylesheet but is better
+     practice to add this to bottom of the body just before body closing tag
+      to speed up loading time. This way the 
+     browser will focus on loading the html and css first before loading the JS which will 
+     make things quicker-->
+    <script src="https://kit.fontawesome.com/81194f5098.js" crossorigin="anonymous"></script>
 </body>
 
 </html>

@@ -135,6 +135,8 @@ footer {
     background-color: orange;
 }
 
+/* Note that CSS styles for different screen sizes are applied with the styles for smallest screens at the top and styles for biggest screens at the bottom */
+
 /* Media query: tablets and larger (768px and up). These properties between the curly brackets after @media screen and..... are only applied if the screen size of the device is 768px or larger */
 @media screen and (min-width: 768px) {
     /* Header */
@@ -173,9 +175,7 @@ footer {
     main {
         /* Push main content down to accommodate larger header */
         margin-top: 79px;
-    }
-
-
+    }  
 }
 
 /* This CSS creates an indication that a link is clickable (by adding a line underneath). 
