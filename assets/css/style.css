@@ -23,6 +23,14 @@ body {
    font-family: 'Lato', sans-serif;
 }
 
+h1, h2, h3 {
+    font-family: 'Oswald', sans-serif;
+    text-transform: uppercase;
+    /* letter spacing provides breathing space between the letters */
+    letter-spacing: 2px;
+    color: #252525;
+}
+
 /* Header */
 header {
     background-color: #ffffff;
@@ -60,13 +68,6 @@ header  a {
     color: inherit;
 }
 
-h1 {
-    font-family: 'Oswald', sans-serif;
-    text-transform: uppercase;
-    /* letter spacing provides breathing space between the letters */
-    letter-spacing: 2px;
-    color: #252525;
-}
 
 #menu {
     font-size: 110%;
@@ -138,8 +139,31 @@ main {
     /* this file path is a relative file path so it will show correctly on our deployed site (absolute file paths don't always display correctly on github pages) to go up a level to another folder, we use ../ in the relative file path.
     no repeat means the image does not repeat, typing center twice means the image will be centered both horizontally and vertically. The cover property means the image will automatically size itself so it covers the entire hero section without
     distorting.*/
-
     background: url("../images/hero-image.webp") no-repeat center center/cover;
+    position: relative;
+}
+
+#cover-text {
+    /* the a value in rgba sets the transparency of the colour applied */ 
+    background-color: rgba(241, 109, 107, .7);
+    font-size: 130%;
+    /* because we set the position on the hero id to relative, when we set the position on the cover text id to absolute, this means it will be placed relative to the hero section */
+    position: absolute;
+    /* setting the property to bottom, means that the cover text shows close to the bottom of the hero image so it doesn't ovelap the runners face. The value of 30px means it doesn't stick directly to the bottom of the image either */
+    bottom: 30px;
+    /* this means it does not take up the full width of the screen */
+    width: 80%;
+    min-height: 200px;
+    /* the padding at the top means that the text does not stick to the top of the cover text div */
+    padding-top: 40px;
+    /* the padding on the left means that the text is spaced out abit from the edge of the screen */
+    padding-left: 10px;
+}
+
+/* this selector targets any h2 and h3 elements that are a direct child of the cover-text div */
+#cover-text > h2, #cover-text > h3 {
+    /* colour set to white to match well with our image and the overlay */
+    color: #ffffff;
 }
 
 /* Footer */
@@ -203,6 +227,17 @@ main {
         /* Push main content down to accommodate larger header */
         margin-top: 79px;
     }  
+
+    /* hero */
+    /* cover text width of 80% that we applied for smaller screens is abit much on larger screens as our text is not long enough to take up the surplus space. 
+    Changing the width in the media queries sections overrides this. */
+    #cover-text {
+        width: 300px;
+        /* This property positions the cover text 50px from the right on larger screens so that we are 
+        making better use of the additional screen space (real estate) that is available on a larger screen */
+        right: 50px;
+    }
+
 }
 
 /* This CSS creates an indication that a link is clickable (by adding a line underneath). 
