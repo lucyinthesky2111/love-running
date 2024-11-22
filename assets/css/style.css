@@ -166,6 +166,39 @@ main {
     color: #ffffff;
 }
 
+
+/* Reasons section */
+#reasons {
+   /* Gives the reasons div some breathing space at the sides and bottom so it doesn't stick to the edge of the screen */
+    width: 90%;
+    margin: 20px auto;
+}
+
+/* targets the h2 element in the reasons div i.e. the h2 heading with the text Why Love Running With Us? */
+#reasons h2 {
+margin-bottom: 20px;
+text-align: center;
+font-size: 280%;
+}
+
+/* targets the divs inside benefits-physical and benefits-mental and makes them not stick as close together */
+#benefits-physical > div,
+#benefits-mental > div {
+    line-height: 20px;
+    margin-bottom: 20px;
+}
+
+/* targets all the paragraphs in the benefits div */
+benefits p {
+    padding: 0 20px;
+}
+
+/* styles the line break under the headings and icons for each benefit. Gives it an additional border of 1px in the same colour as the text */
+#benefits hr {
+    border-top: 1px solid #3a3a3a;
+    margin: 5px 0;
+}
+
 /* Footer */
 #social-networks {
     /* to centre our icons, we use text-align as icons are treated as text for CSS purposes */
@@ -183,7 +216,7 @@ main {
 #social-networks i {
     font-size: 160%;
     padding: 5%;
-    color: #3a3a3a
+    color: #3a3a3a;
 }
 
 /* Note that CSS styles for different screen sizes are applied with the styles for smallest screens at the top and styles for biggest screens at the bottom */
@@ -217,7 +250,7 @@ main {
 
     /* This CSS makes use of our extra screen space on a larger screen to make the logo larger and stand out more so it has a bigger impact */
     #logo {
-        font-size: 200%;
+        font-size: 280%;
         line-height: 75px;
         margin: 0 0.5rem;
     }
