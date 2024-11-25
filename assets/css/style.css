@@ -199,6 +199,28 @@ benefits p {
     margin: 5px 0;
 }
 
+/* styles the circular image in the reasons section */
+#circle-cover-bg {
+    background: url('../images/reasons-image.webp') no-repeat top center / cover;
+    height: 90vw;
+    width: 90vw;
+    margin-bottom: 20px;
+    /* makes the square image into a circle */
+    border-radius: 50%;
+/* To make sure that on larger or landscape held phones, the image does not take up too much space.
+we set a max width and max height of 300px */
+max-width: 300px;
+max-height: 300px;
+}
+
+/* flexbox properties used here to correct the problem of the image sticking close to the left edge of the screen when
+the mobile device is rotated landscape. These flexbox properties centre the image */
+#benefits-image {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
 /* Footer */
 #social-networks {
     /* to centre our icons, we use text-align as icons are treated as text for CSS purposes */
