@@ -248,6 +248,17 @@ the mobile device is rotated landscape. These flexbox properties centre the imag
     color: #fafafa;
 }
 
+/* Gallery page */
+#photos img {
+    width: 100%;
+    line-height: 1em;
+}
+
+#photos {
+    line-height: 0;
+}
+
+
 /* Footer */
 #social-networks {
     /* to centre our icons, we use text-align as icons are treated as text for CSS purposes */
@@ -269,6 +280,15 @@ the mobile device is rotated landscape. These flexbox properties centre the imag
 }
 
 /* Note that CSS styles for different screen sizes are applied with the styles for smallest screens at the top and styles for biggest screens at the bottom */
+
+
+/* Media query: large or landscape phones (576px and up) */
+@media screen and (min-width: 576px) {
+    #photos {
+        column-count: 2;
+        column-gap: 0;
+    }
+}
 
 /* Media query: tablets and larger (768px and up). These properties between the curly brackets after @media screen and..... are only applied if the screen size of the device is 768px or larger */
 @media screen and (min-width: 768px) {
@@ -337,6 +357,12 @@ the mobile device is rotated landscape. These flexbox properties centre the imag
      text-align: end;
      align-self: flex-end;
  }
+
+     /* Gallery */
+     #photos {
+        column-count: 3;
+    }
+
 }
 
 /* This CSS creates an indication that a link is clickable (by adding a line underneath). 
